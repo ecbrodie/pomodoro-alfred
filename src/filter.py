@@ -4,6 +4,7 @@
 import sys
 
 from workflow import Workflow, ICON_WARNING
+from args import *
 
 
 def main(wf):
@@ -28,9 +29,9 @@ def main(wf):
 
 def all_items():
     return [
-        dict(title='pomo-start', description='Start a pomodoro', arg='start'),
-        dict(title='pomo-stop', description='Stop a pomodoro', arg='stop'),
-        dict(title='pomo-break', description='Start a break', arg='break'),
+        dict(title='pomo-start', description='Start a pomodoro', arg=START_ARG),
+        dict(title='pomo-stop', description='Stop a pomodoro', arg=STOP_ARG),
+        dict(title='pomo-break', description='Start a break', arg=BREAK_ARG),
     ]
 
 if __name__ == '__main__':
