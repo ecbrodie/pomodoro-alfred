@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 import sys
+from subprocess import call
 
 from workflow import Workflow, notify
 from args import *
@@ -19,12 +20,16 @@ def main(wf):
 
 def start_action():
     notify.notify('Starting a pomodoro')
+    run_script('src/startPomo.scpt')
 
 def stop_action():
     notify.notify('Stopping a pomodoro')
 
 def break_action():
     notify.notify('Starting a break')
+
+def run_script(filename):
+    call(['osascript', filename])
 
 if __name__ == '__main__':
     # Create a global `Workflow` object
