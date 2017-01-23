@@ -21,7 +21,7 @@ def main(wf):
         wf.add_item('Unknown pomo command', icon=ICON_WARNING)
 
     for item in items:
-        wf.add_item(item['title'], item['description'], arg=item['arg'])
+        wf.add_item(item['title'], item['description'], arg=item['arg'], valid=True)
 
     # Send output to Alfred. You can only call this once.
     wf.send_feedback()
