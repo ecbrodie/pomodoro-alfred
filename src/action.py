@@ -28,6 +28,7 @@ def stop_action():
 
 def break_action():
     notify.notify('Starting a break')
+    run_script('src/applescript/startBreak.scpt')
 
 def run_script(filename):
     call(['osascript', filename])
