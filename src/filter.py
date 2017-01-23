@@ -3,22 +3,30 @@
 
 import sys
 
-from workflow import Workflow
+from workflow import Workflow, ICON_WARNING
 
 
 def main(wf):
-    # Get args from Workflow, already in normalized Unicode
-    args = wf.args
+    query = None
 
-    for item in items():
+    args = wf.args
+    if len(wf.args):
+        query = wf.args[0]
+
+    items = all_items()
+    if query:
+        items = wf.filter(query, items, lambda item: item['arg'])
+
+    if not items:
+        wf.add_item('Unknown pomo command', icon=ICON_WARNING)
+
+    for item in items:
         wf.add_item(item['title'], item['description'], arg=item['arg'])
 
     # Send output to Alfred. You can only call this once.
-    # Well, you *can* call it multiple times, but Alfred won't be listening
-    # any more...
     wf.send_feedback()
 
-def items():
+def all_items():
     return [
         dict(title='pomo-start', description='Start a pomodoro', arg='start'),
         dict(title='pomo-stop', description='Stop a pomodoro', arg='stop'),
