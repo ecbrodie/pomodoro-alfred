@@ -20,7 +20,7 @@ def main(wf):
 
 def start_action():
     notify.notify('Starting a pomodoro')
-    run_script('src/startPomo.scpt')
+    run_script('src/applescript/startPomo.scpt')
 
 def stop_action():
     notify.notify('Stopping a pomodoro')
