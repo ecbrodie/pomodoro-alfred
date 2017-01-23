@@ -23,7 +23,8 @@ def start_action():
     run_script('src/applescript/startPomo.scpt')
 
 def stop_action():
-    notify.notify('Stopping a pomodoro')
+    notify.notify('Stopping a pomodoro/break')
+    run_script('src/applescript/stopPomo.scpt')
 
 def break_action():
     notify.notify('Starting a break')
