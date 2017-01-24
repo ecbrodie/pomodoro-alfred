@@ -2,12 +2,15 @@
 Alfred workflow for Pomodoro tracking, via [Tomato One (formerly known as Pomodoro One)](http://rinik.net/pomodoro/).
 
 # Usage
-Currently supports just one command: `pomo` to start a pomodoro.
+Type `pomo` to activate the workflow and access all commands. This hotkey can be customized in your Alfred Preferences.
+
+## Commands
+* `start`: Starts a pomodoro
+* `stop`: Stops the active pomodoro or break
+* `break`: Starts a short break
 
 # Roadmap
 This project is in its infancy and I have plans to extend its usage much further. Some of my ideas include:
-- Commands to start and stop a pomodoro
-- Commands to start and stop a break
 - Support additional pomodoro timer apps
 - Show time remaining in current break
 - Customizing pomodoro timers
